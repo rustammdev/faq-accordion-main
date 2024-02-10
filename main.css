@@ -10,27 +10,33 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid red;
   height: 100vh;
 }
 
 h1,
 h2 {
   font-family: "Work Sans", sans-serif;
+  color: hsl(292, 42%, 14%);
+}
+
+h1 {
+    display: flex;
+    justify-content: start;
+    align-items: center; 
+    gap: 14px;
 }
 h2 {
   font-size: 14px;
   display: flex;
-  justify-content: start;
+  justify-content: space-between;
   align-items: center;
   gap: 6px;
   padding: 8px 0px;
   letter-spacing: 0.5x;
   font-weight: 600;
-  color: hsl(292, 42%, 14%);
 }
-h2:hover{
-    color: #AD28EBFF;
+h2:hover {
+  color: #ad28ebff;
 }
 .wrapper p {
   font-size: 12px;
@@ -39,6 +45,7 @@ h2:hover{
   letter-spacing: 0.1px;
   padding-bottom: 12px;
   color: hsl(292, 16%, 49%);
+
 }
 
 img {
@@ -50,21 +57,37 @@ img {
 }
 
 .wrapper {
-  max-width: 550px;
-  border: 1px dashed black;
+  width: 550px;
   padding: 18px 24px;
-  color:  hsl(0, 0%, 100%);
+  color: hsl(0, 0%, 100%);
   margin: 8px;
+  background-color: hsl(293, 12%, 85%);;
+  border-radius: 8px;
+  box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
 }
 
-.wrapper div:not(:last-child){
-    border-bottom: 1px solid rgba(0, 0, 0, 0.115);
+.wrapper div:not(:last-child) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.115);
 }
 
 .hidden {
   display: none;
 }
 
-.title-faq{
-    cursor: pointer;
+.title-faq {
+  cursor: pointer;
+}
+
+
+/* backgroun */
+body{
+  background-image: url(./assets/images/background-pattern-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+@media (max-width: 373px) {
+ body{
+  background-image: url(./assets/images/background-pattern-mobile.svg);
+ }; 
 }

@@ -1,16 +1,29 @@
-const btn = document.querySelectorAll("#icon-btn");
+const icon = document.querySelectorAll("#icon-btn");
 const title = document.querySelectorAll(".title-faq");
 const items = document.querySelectorAll("#item");
+const otaEl = document.querySelectorAll("#ota-el");
 
-title.forEach((e, index) => {
+Array.from(title).forEach((e, index) => {
   e.addEventListener("click", () => {
-    items.forEach((e2, itemIndex) => {
-      if (index == itemIndex) {
-        e2.classList.toggle("hidden");
-        e.children[0].setAttribute("src", "./assets/images/icon-minus.svg");
+    // img change
+    e.parentElement.children[1].classList.toggle("hidden");
+
+    otaEl.forEach((el, il) => {
+      if (index != il) {
+        el.children[1].classList.add("hidden");
+      }
+
+      // P element hidden bo'lganda, img dagi elementham hidden
+      if (!Array.from(el.children[1].classList).includes("hidden")) {
+        el.children[0].children[0].setAttribute(
+          "src",
+          "./assets/images/icon-minus.svg"
+        );
       } else {
-        e2.classList.add("hidden");
-        // e.children[0].setAttribute("src", "./assets/images/icon-plus.svg");
+        el.children[0].children[0].setAttribute(
+          "src",
+          "./assets/images/icon-plus.svg"
+        );
       }
     });
   });
